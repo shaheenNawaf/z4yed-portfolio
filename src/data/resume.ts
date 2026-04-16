@@ -96,14 +96,12 @@ export const experiences = [
     details: [
       'Built a Telegram community from 0 to 1,000 active members in 2 weeks as a retention channel.',
       'Navigated CICC regulatory changes by pivoting strategy from acquisition to community-building.',
-      'Structured macro-influencer contracts with milestone-based payments, maintaining a 4:1 ROAS.',
+      'Structured macro-influencer contracts with milestone-based payments, maintaining a 4:1 ROAS. (Pictured below)',
     ],
     gallery: [
-      '/experience/yohoho-1.jpg',
-      '/experience/yohoho-2.jpg',
-      '/experience/yohoho-3.jpg',
+      '/yohoho/initial-contracts.jpg',
     ], 
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    video: '',
   },
   {
     id: 'exp-yohoho-influ',
@@ -119,11 +117,9 @@ export const experiences = [
       'Engineered an automated onboarding pipeline and centralized document tracking system using templated workflows, cutting administrative bottlenecks and reducing partner activation time from 14 days to 3 days (a 78% reduction).',
     ],
     gallery: [
-      '/experience/yohoho-1.jpg',
-      '/experience/yohoho-2.jpg',
-      '/experience/yohoho-3.jpg',
+      '/yohoho/yohoho-1.png'
     ], 
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    video: '',
   },
   {
     id: 'exp-rivalry-partnerships',
@@ -137,13 +133,16 @@ export const experiences = [
       'Spearheaded the B2B pitch for the Tier One Entertainment deal, birthing the "Blacklist Rivalry" Dota 2 team.',
       'Achieved 40% growth in affiliate-driven revenue and 15-20% QoQ growth in FTDs.',
       'Coordinated co-branded activations with agencies like CBZN, achieving 60-70% conversion rates.',
+      'Crafted 40+ Content Briefs and Managed day-to-day executions of creator campaigns which covers postings, video content, livestreams, and client-produced content (e.g. PighaTI - our DOTA TI Companion series last 2022; linked below).',
     ],
     gallery: [
-      '/experience/yohoho-1.jpg',
-      '/experience/yohoho-2.jpg',
-      '/experience/yohoho-3.jpg',
+      '/rivalry/rivalry-tribe.jpg',
+      '/rivalry/pindabali.jpg',
+      '/rivalry/bali-1.jpg',
     ], 
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    video: [
+        'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D483447207175593&show_text=0'
+    ],
   },
   {
     id: 'exp-rivalry-community',
@@ -159,11 +158,13 @@ export const experiences = [
       'Launched "Bring Me" activations that accelerated KYC completion through recurring content formats.',
     ],
     gallery: [
-      '/experience/yohoho-1.jpg',
-      '/experience/yohoho-2.jpg',
-      '/experience/yohoho-3.jpg',
+      '/rivalry/new-tribe.jpg',
+      '/rivalry/viber.jpg',
+      '/rivalry/bbc.jpg',
+      '/rivalry/nsns.jpg',
+      '/rivalry/ttkover.jpg',
     ], 
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    video: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkuyanicwxc%2Fvideos%2F1425324814659531&show_text=0',
   },
   {
     id: 'exp-rivalry-campaigns',
@@ -176,12 +177,14 @@ export const experiences = [
     details: [
       "Built Rivalry's initial Philippine affiliate and micro-influencer network from scratch (20+ partners across Valorant, Dota 2, CS2, and League of Legends), establishing the early-stage user acquisition foundation that subsequent campaigns were layered on top of.",
       'Introduced a CAC-obsessed, performance-based spend allocation model against First-Time Depositor (FTD) and revenue data from the outset, setting the data-first marketing culture that contributed to 15-20% QoQ FTD growth.',
+      'Created and ran Rivalry Philippines initial campaigns (e.g. giveaways, local tournaments, livestream events) that bolstered the brands visibility across key influencers and micro-influencers communities. (Pictured below)',
     ],
     gallery: [
-      '/experience/yohoho-1.jpg',
-      '/experience/yohoho-2.jpg',
-      '/experience/yohoho-3.jpg',
+      '/rivalry/initial-edits.jpg',
+      '/rivalry/initial-campaign.jpg',
+      '/rivalry/initial-campaign-2.jpg',
+      '/rivalry/initial-affiliates.jpg',
     ], 
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    video: '',
   },
 ];
