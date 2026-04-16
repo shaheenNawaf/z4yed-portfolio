@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const {
+  title,
+  description = "Full-stack Software Engineer & Creator Partnerships Specialist based in Davao, Philippines.",
+} = Astro.props;
+
+const siteUrl = "https://drive.google.com/drive/folders/12wgNJ3l43FH67uNM89Zn8hilQlSXiQhl?usp=sharing"; 
+const ogImage = `${siteUrl}`; 
+---
+<html lang="en" class="bg-zinc-950 text-zinc-300 antialiased selection:bg-blue-500/30">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body class="max-w-6xl mx-auto min-h-screen flex flex-col md:flex-row gap-10 p-6 md:p-12 lg:p-20 font-sans relative">
+    <slot /> 
+  </body>
+</html>
+
+<style is:global>
+  dialog[open] { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+  body {
+    background-image: 
+      linear-gradient(to right, #18181b 1px, transparent 1px),
+      linear-gradient(to bottom, #18181b 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, #09090b 80%);
+    pointer-events: none; z-index: -1;
+  }
+</style>

@@ -1,17 +1,94 @@
 ---
-
+import BaseLayout from '../layouts/layout.astro';
+import Sidebar from '../components/sidebar.astro';
+import ProjectCard from '../components/project_card.astro';
+import ExperienceCard from '../components/experience_card.astro';
+import { introParagraph, projects, experiences } from '../data/resume';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Shaheen Nawaf Zayed Al Adwani - Portfolio">
+  <Sidebar />
+  
+  <main class="flex-1 flex flex-col gap-16">
+    <section>
+      <h2 class="text-xs font-semibold text-zinc-500 tracking-widest uppercase mb-4">Intro</h2>
+      <p class="text-sm leading-relaxed text-justify">{introParagraph}</p>
+    </section>
+
+    <section>
+      <h2 class="text-xs font-semibold text-zinc-500 tracking-widest uppercase mb-4">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {projects.map(project => <ProjectCard {...project} />)}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xs font-semibold text-zinc-500 tracking-widest uppercase mb-4">Experience</h2>
+      <div class="flex flex-col gap-4">
+        {experiences.map(exp => <ExperienceCard {...exp} />)}
+      </div>
+    </section>
+  </main>
+
+  <script>
+  const setupModals = () => {
+    const modalTriggers = document.querySelectorAll('[data-modal-id]');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    const dialogs = document.querySelectorAll('dialog') as NodeListOf<HTMLDialogElement>;
+
+    const stopVideo = (modal: HTMLDialogElement) => {
+      const iframe = modal.querySelector('iframe');
+      if (iframe) {
+        const currentSrc = iframe.src;
+        iframe.src = '';
+        iframe.src = currentSrc;
+      }
+    };
+
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const modalId = trigger.getAttribute('data-modal-id');
+        if (!modalId) return;
+        const modal = document.getElementById(modalId) as HTMLDialogElement;
+        if (modal) {
+          modal.showModal();
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dialog = btn.closest('dialog');
+        if (dialog) {
+          stopVideo(dialog);
+          dialog.close();
+        }
+      });
+    });
+
+    dialogs.forEach(dialog => {
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = 'auto';
+      });
+
+      dialog.addEventListener('click', (e) => {
+        const dialogDimensions = dialog.getBoundingClientRect();
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          stopVideo(dialog);
+          dialog.close();
+        }
+      });
+    });
+  };
+
+  setupModals();
+  document.addEventListener('astro:after-swap', setupModals);
+  </script>
+</BaseLayout>
