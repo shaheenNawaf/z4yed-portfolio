@@ -39,7 +39,7 @@ export const projects = [
   },
   {
     id: 'proj-agripinoy',
-    title: 'Agri-Pinoy: AI-Power Philippine Agri-Chatbot',
+    title: 'Agri-Pinoy: RAG-Powered Philippine Agri-Chatbot',
     date: 'Feb 2026',
     role: 'Lead Front-End Developer',
     color: '#3b82f6',
@@ -54,7 +54,7 @@ export const projects = [
   },
   {
     id: 'proj-staysafe',
-    title: 'StaySafe: AirBNB Clone via Flutter',
+    title: 'SafeStay: AirBNB Clone via Flutter',
     date: 'Dec 2024',
     role: 'Full Stack Developer',
     color: '#ec4899',
